@@ -1,0 +1,259 @@
+@import 'config';
+
+html,
+body {
+  height: 100%;
+}
+
+h1,
+h2,
+p,
+a {
+  font-family: $main-font;
+  text-transform: uppercase;
+  color: $grey;
+  font-size: 1.2rem;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 2rem;
+  background-image: url(../img/background_wall.jpg);
+  background-position: 22% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+
+.main {
+  display: flex;
+  max-width: 700px;
+  // min-width: 560px;
+  width: 100%;
+  // height: 500px;
+  background-color: transparent;
+  border: 3px solid $yellow;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 250px;
+  flex-shrink: 0;
+  background-image: url(../img/catwall.jpg);
+  background-repeat: no-repeat;
+  background-position: 22% 0;
+  background-size: cover;
+
+  &__header {
+    margin-top: 1rem;
+    text-align: center;
+  }
+
+  &__text {
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+    padding-top: 3rem;
+    background: rgb(0, 0, 0);
+    background: linear-gradient(
+      0deg,
+      rgb(27, 27, 27) 40%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    &__accent {
+      color: $yellow;
+    }
+  }
+}
+
+.control {
+  flex: 1 1 0;
+  padding: 1rem 1.2rem;
+  background-color: rgba(0, 0, 0, 0.185);
+  border-left: 3px solid $yellow;
+
+  &__header {
+    color: $yellow;
+  }
+
+  nav {
+    margin-top: 1rem;
+  }
+
+  &__day-select {
+    display: flex;
+    margin-top: 5rem;
+
+    & li:not(:first-child) {
+      margin-left: 0.5rem;
+    }
+
+    &__item {
+      font-family: $main-font;
+      color: #fff;
+      text-decoration: none;
+      text-transform: uppercase;
+      padding: 0.3rem 0.5rem;
+      border-radius: 7px;
+      transition: background-color 0.3s, color 0.3s;
+      border: 3px solid transparent;
+      &:focus {
+        border-color: $brown;
+        outline: none;
+      }
+    }
+
+    &__item--active {
+      color: #000;
+      background-color: $yellow;
+    }
+  }
+
+  &__seat-select {
+    text-align: center;
+    margin-top: 1.5rem;
+
+    & .control__header {
+      text-align: center;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid $grey;
+    }
+  }
+
+  &__boxzone {
+    height: 100%;
+    padding-bottom: 1rem;
+    border: 1px solid $grey;
+    border-radius: 20px;
+  }
+
+  &__wall {
+    width: 90%;
+    margin: 0.5rem auto 0;
+    padding-bottom: 0.5rem;
+    color: $orange;
+    text-align: center;
+    border-bottom: 8px solid $orange;
+  }
+
+  &__boxes-row {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__zone-label {
+    margin-top: 1rem;
+    text-align: center;
+    font-size: 0.7rem;
+    color: $orange;
+  }
+
+  &__confirm-btn {
+    margin-top: 1rem;
+    padding: 0.5rem;
+    font-family: $main-font;
+    text-transform: uppercase;
+    border-radius: 7px;
+    border: none;
+    background-color: $yellow;
+    cursor: pointer;
+    border: 3px solid transparent;
+    &:focus {
+      border-color: $brown;
+      outline: none;
+    }
+  }
+}
+
+.box {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 50px;
+  margin-left: 0.3rem;
+  margin-right: 0.3rem;
+  margin-top: 1rem;
+  background-color: $orange;
+  border: 2px solid $brown;
+  cursor: pointer;
+
+  &__checkbox {
+    &.visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+    }
+
+    &:checked ~ .box__cat {
+      opacity: 1;
+    }
+
+    &:checked ~ .box__number {
+      opacity: 0;
+    }
+
+    &:disabled ~ .box__cat {
+      opacity: 1;
+      background-image: url(../img/occupied_cat.svg);
+    }
+
+    &:focus ~ .box__number {
+      color: $brown;
+    }
+  }
+
+  &__cat {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(../img/select_cat.svg) center/85% no-repeat;
+    opacity: 0;
+    transition: opacity 0.6s;
+  }
+
+  &__number {
+    font-size: 0.6rem;
+    color: $darkgrey;
+    text-align: center;
+    transition: opacity 0.6s, color 0.3s;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+}
+
+// ----------------- HOWERS
+@media (hover: hover) and (pointer: fine) {
+  .control__day-select__item:hover {
+    color: #000;
+    background-color: $yellow;
+    border-radius: 7px;
+  }
+}
+
+@import 'responsive';
