@@ -21,10 +21,10 @@ body {
   justify-content: center;
   align-items: center;
   margin: 0 2rem;
+  background-color: #000;
   background-image: url(../img/background_wall.jpg);
-  background-position: 22% 0;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: repeat;
+  background-size: 70%;
   background-attachment: fixed;
 }
 
@@ -39,9 +39,7 @@ body {
 .main {
   display: flex;
   max-width: 700px;
-  // min-width: 560px;
   width: 100%;
-  // height: 500px;
   background-color: transparent;
   border: 3px solid $yellow;
   border-radius: 30px;
@@ -83,7 +81,7 @@ body {
 .control {
   flex: 1 1 0;
   padding: 1rem 1.2rem;
-  background-color: rgba(0, 0, 0, 0.185);
+  background-color: rgba(0, 0, 0, 0.2);
   border-left: 3px solid $yellow;
 
   &__header {
@@ -111,9 +109,13 @@ body {
       border-radius: 7px;
       transition: background-color 0.3s, color 0.3s;
       border: 3px solid transparent;
+
       &:focus {
         border-color: $brown;
-        outline: none;
+      }
+
+      &:active {
+        border-color: $brown;
       }
     }
 
@@ -145,9 +147,9 @@ body {
     width: 90%;
     margin: 0.5rem auto 0;
     padding-bottom: 0.5rem;
-    color: $orange;
+    color: $grey;
     text-align: center;
-    border-bottom: 8px solid $orange;
+    border-bottom: 8px solid $grey;
   }
 
   &__boxes-row {
@@ -168,13 +170,17 @@ body {
     font-family: $main-font;
     text-transform: uppercase;
     border-radius: 7px;
+    font-size: 1.2rem;
     border: none;
     background-color: $yellow;
+    -webkit-appearance: none;
     cursor: pointer;
     border: 3px solid transparent;
     &:focus {
       border-color: $brown;
-      outline: none;
+    }
+    &:active {
+      border-color: $brown;
     }
   }
 }
@@ -214,6 +220,10 @@ body {
     &:disabled ~ .box__cat {
       opacity: 1;
       background-image: url(../img/occupied_cat.svg);
+    }
+
+    &:disabled ~ .box__number {
+      opacity: 0;
     }
 
     &:focus ~ .box__number {
