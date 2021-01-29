@@ -10,14 +10,17 @@
 
   <body>
     <div class="overlay"></div>
+    <button class="try-btn" type="button">Try!</button>
     <main class="main">
       <section class="description">
-        <h1 class="description__header">The Wall</h1>
-        <p class="description__text">
-          stare at<br /><span class="description__text__accent"
-            >pure<br />delightful<br />nothing<br /></span
-          >all day long . . .
-        </p>
+        <div class="description__wrap">
+          <h1 class="description__header">The Wall</h1>
+          <p class="description__text">
+            stare at<br /><span class="description__text__accent"
+              >pure<br />delightful<br />nothing<br /></span
+            >all day long . . .
+          </p>
+        </div>
       </section>
       <section class="control">
         <h2 class="control__header">Select date</h2>
@@ -269,5 +272,22 @@
         </form>
       </section>
     </main>
+
+    <!-- Just for fun -->
+    <script>
+      const tryBtn = document.querySelector('.try-btn');
+      const overlay = document.querySelector('.overlay');
+      const main = document.querySelector('.main');
+
+      tryBtn.addEventListener('click', function () {
+        if (document.fullscreenElement) {
+          document.exitFullscreen();
+          [overlay, main].forEach((item) => item.classList.remove('hidden'));
+        } else {
+          document.documentElement.requestFullscreen();
+          [overlay, main].forEach((item) => item.classList.add('hidden'));
+        }
+      });
+    </script>
   </body>
 </html>

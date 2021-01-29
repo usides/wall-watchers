@@ -6,51 +6,47 @@
 
 @include media-middle {
   body {
+    margin: 0;
     background-size: 150%;
   }
 
   .main {
     flex-direction: column;
-    overflow: scroll;
+    height: 100%;
   }
 
   .description {
-    min-height: 410px;
-    overflow: hidden;
-    background-position: 0% 20%;
-    background-size: 115%;
-  }
+    border: none;
+    border-radius: 0;
+    border-bottom: 3px solid $yellow;
 
-  .control {
-    border-left: 0;
-    border-top: 3px solid $yellow;
-  }
-}
-
-@include media-small {
-  body {
-    margin: 0;
-    justify-content: flex-start;
+    &__wrap {
+      min-height: 420px;
+      background-position: 0% 20%;
+      background-size: cover;
+    }
   }
 
   .overlay {
     display: none;
   }
 
-  .main {
-    border: none;
+  .control {
     border-radius: 0;
-    height: 100%;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.65);
   }
 
-  .description {
+  .try-btn {
+    // display: none;
+  }
+}
+
+@include media-small {
+  .description__wrap {
     min-height: 380px;
     background-position: 0% 15%;
     background-size: 125%;
-  }
-
-  .control {
-    background-color: rgba(0, 0, 0, 0.65);
   }
 
   .box {
