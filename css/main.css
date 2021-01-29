@@ -1,4 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+button,
+a,
+input,
+li,
+label {
+  outline: none;
+  border: transparent;
+  background-color: rgba(255, 255, 255, 0);
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
 html,
 body {
   height: 100%;
@@ -29,10 +40,10 @@ body {
       -ms-flex-align: center;
           align-items: center;
   margin: 0 2rem;
+  background-color: #000;
   background-image: url(../img/background_wall.jpg);
-  background-position: 22% 0;
-  background-repeat: no-repeat;
-  background-size: cover;
+  background-repeat: repeat;
+  background-size: 70%;
   background-attachment: fixed;
 }
 
@@ -99,7 +110,7 @@ body {
       -ms-flex: 1 1 0px;
           flex: 1 1 0;
   padding: 1rem 1.2rem;
-  background-color: rgba(0, 0, 0, 0.185);
+  background-color: rgba(0, 0, 0, 0.2);
   border-left: 3px solid #fdffa5;
 }
 
@@ -136,7 +147,10 @@ body {
 
 .control__day-select__item:focus {
   border-color: #cb8c2e;
-  outline: none;
+}
+
+.control__day-select__item:active {
+  border-color: #cb8c2e;
 }
 
 .control__day-select__item--active {
@@ -166,9 +180,9 @@ body {
   width: 90%;
   margin: 0.5rem auto 0;
   padding-bottom: 0.5rem;
-  color: #fddeaf;
+  color: #efefef;
   text-align: center;
-  border-bottom: 8px solid #fddeaf;
+  border-bottom: 8px solid #efefef;
 }
 
 .control__boxes-row {
@@ -193,15 +207,20 @@ body {
   font-family: "Russo One", sans-serif;
   text-transform: uppercase;
   border-radius: 7px;
+  font-size: 1.2rem;
   border: none;
   background-color: #fdffa5;
+  -webkit-appearance: none;
   cursor: pointer;
   border: 3px solid transparent;
 }
 
 .control__confirm-btn:focus {
   border-color: #cb8c2e;
-  outline: none;
+}
+
+.control__confirm-btn:active {
+  border-color: #cb8c2e;
 }
 
 .box {
@@ -247,6 +266,10 @@ body {
   background-image: url(../img/occupied_cat.svg);
 }
 
+.box__checkbox:disabled ~ .box__number {
+  opacity: 0;
+}
+
 .box__checkbox:focus ~ .box__number {
   color: #cb8c2e;
 }
@@ -282,5 +305,63 @@ body {
     color: #000;
     background-color: #fdffa5;
     border-radius: 7px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  body {
+    background-size: 120%;
+  }
+}
+
+@media screen and (max-width: 690px) {
+  body {
+    background-size: 150%;
+  }
+  .main {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    overflow: scroll;
+  }
+  .description {
+    min-height: 410px;
+    overflow: hidden;
+    background-position: 0% 20%;
+    background-size: 115%;
+  }
+  .control {
+    border-left: 0;
+    border-top: 3px solid #fdffa5;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  body {
+    margin: 0;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+  }
+  .overlay {
+    display: none;
+  }
+  .main {
+    border: none;
+    border-radius: 0;
+    height: 100%;
+  }
+  .description {
+    min-height: 380px;
+    background-position: 0% 15%;
+    background-size: 125%;
+  }
+  .control {
+    background-color: rgba(0, 0, 0, 0.65);
+  }
+  .box {
+    margin-left: 0.1rem;
+    margin-right: 0.1rem;
   }
 }
