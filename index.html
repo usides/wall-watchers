@@ -38,7 +38,11 @@
             </li>
           </ul>
         </nav>
-        <form action="./index.html" class="control__seat-select">
+        <form
+          id="control-seat-form"
+          action="./index.html"
+          class="control__seat-select"
+        >
           <div class="control__boxzone">
             <h2 class="control__header">Select box</h2>
             <p class="control__wall">Wall</p>
@@ -268,20 +272,14 @@
             </div>
             <p class="control__price-label">Cardboar box zone prices</p>
             <div class="control__prices">
-              <div class="control__prices__item">
+              <div data-row="firstRow" class="control__prices__item">
                 <p>1 row:</p>
-                <img src="./img/fish.svg" alt="fish logo" />
-                <img src="./img/fish.svg" alt="fish logo" />
-                <img src="./img/fish.svg" alt="fish logo" />
               </div>
-              <div class="control__prices__item">
+              <div data-row="secondRow" class="control__prices__item">
                 <p>2 row:</p>
-                <img src="./img/fish.svg" alt="fish logo" />
-                <img src="./img/fish.svg" alt="fish logo" />
               </div>
-              <div class="control__prices__item">
+              <div data-row="thirdRow" class="control__prices__item">
                 <p>3 row:</p>
-                <img src="./img/fish.svg" alt="fish logo" />
               </div>
             </div>
           </div>
@@ -289,22 +287,12 @@
             <h2 class="control__header">Your order</h2>
             <div class="control__order__boxes">
               <p class="control__order__boxes__label">Boxes:</p>
-              <div class="control__order__boxes__set">
-                <p class="control__order__boxes__item">1</p>
-                <p class="control__order__boxes__item">14</p>
-                <p class="control__order__boxes__item">14</p>
-                <p class="control__order__boxes__item">14</p>
-                <p class="control__order__boxes__item">14</p>
-                <p class="control__order__boxes__item">14</p>
-                <p class="control__order__boxes__item">14</p>
-                <p class="control__order__boxes__item">14</p>
-                <p class="control__order__boxes__item">14</p>
-                <p class="control__order__boxes__item">14</p>
-                <p class="control__order__boxes__item">14</p>
+              <div id="ordered-boxes" class="control__order__boxes__set">
+                <p class="control__order__boxes__item">Not selected</p>
               </div>
             </div>
             <div class="control__order__price">
-              <p>Total price: <span>12</span></p>
+              <p>Total price: <span id="total-price">0</span></p>
               <img src="./img/fish.svg" alt="fish logo" />
             </div>
           </div>
