@@ -104,6 +104,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   max-width: 700px;
+  min-height: 721px;
   width: 100%;
   -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
@@ -168,6 +169,7 @@ body {
 }
 
 .control {
+  position: relative;
   -webkit-box-flex: 1;
   -ms-flex: 1 1 0px;
   flex: 1 1 0;
@@ -314,7 +316,7 @@ body {
 }
 
 .control__order__boxes__label {
-  margin-top: 0.5rem;
+  margin-top: 0.7rem;
   color: #fddeaf;
 }
 
@@ -331,7 +333,7 @@ body {
 
 .control__order__boxes__item {
   margin-left: 0.5rem;
-  margin-top: 0.5rem;
+  margin-top: 0.7rem;
   padding: 0.3rem;
   min-width: 30px;
   font-size: 0.7rem;
@@ -366,6 +368,11 @@ body {
 }
 
 .control__confirm-btn {
+  position: absolute;
+  -webkit-transform: translate(-50%);
+  transform: translate(-50%);
+  left: 50%;
+  bottom: 1rem;
   margin-top: 1rem;
   padding: 0.5rem;
   font-family: 'Russo One', sans-serif;
@@ -427,10 +434,12 @@ body {
 .box__checkbox:disabled ~ .box__cat {
   opacity: 1;
   background-image: url(../img/occupied_cat.svg);
+  cursor: not-allowed;
 }
 
 .box__checkbox:disabled ~ .box__number {
   opacity: 0;
+  cursor: not-allowed;
 }
 
 .box__checkbox:focus ~ .box__number {
@@ -489,6 +498,7 @@ body {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
+    min-height: 0;
     height: 100%;
   }
   .description {
@@ -508,6 +518,11 @@ body {
     border-radius: 0;
     border: none;
     background-color: rgba(0, 0, 0, 0.65);
+  }
+  .control__confirm-btn {
+    position: static;
+    -webkit-transform: translate(0%);
+    transform: translate(0%);
   }
 }
 

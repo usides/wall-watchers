@@ -18,4 +18,22 @@ module.exports = {
     'prettier/prettier': ['error'],
     'no-console': 0,
   },
+  overrides: [
+    {
+      files: ['*.js'],
+      rules: {
+        'operator-linebreak': 'off',
+        'comma-dangle': [
+          'error',
+          {
+            arrays: 'always-multiline',
+            objects: 'always-multiline',
+            imports: 'always',
+            exports: 'always',
+            functions: 'never',
+          },
+        ],
+      },
+    },
+  ],
 };
