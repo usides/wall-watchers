@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 button,
 a,
 input,
@@ -19,7 +19,7 @@ h1,
 h2,
 p,
 a {
-  font-family: "Russo One", sans-serif;
+  font-family: 'Russo One', sans-serif;
   text-transform: uppercase;
   color: #efefef;
   font-size: 1.2rem;
@@ -31,14 +31,14 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   margin: 0 2rem;
   background-color: #000;
   background-image: url(../img/background_wall.jpg);
@@ -50,7 +50,7 @@ body {
 @-webkit-keyframes scaleme {
   50% {
     -webkit-transform: scale(1.2, 1.2);
-            transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
     background-color: #fddeaf;
   }
 }
@@ -58,7 +58,7 @@ body {
 @keyframes scaleme {
   50% {
     -webkit-transform: scale(1.2, 1.2);
-            transform: scale(1.2, 1.2);
+    transform: scale(1.2, 1.2);
     background-color: #fddeaf;
   }
 }
@@ -88,14 +88,14 @@ body {
   background-color: #fdffa5;
   border-radius: 50%;
   border: 3px solid #2c2c2c;
-  font-family: "Russo One", sans-serif;
+  font-family: 'Russo One', sans-serif;
   font-size: 0.7rem;
   text-align: center;
   text-transform: uppercase;
   color: #2c2c2c;
   cursor: pointer;
   -webkit-animation: scaleme 1.5s ease-in-out infinite;
-          animation: scaleme 1.5s ease-in-out infinite;
+  animation: scaleme 1.5s ease-in-out infinite;
   z-index: 1;
 }
 
@@ -116,7 +116,7 @@ body {
 .description {
   min-width: 250px;
   -ms-flex-negative: 0;
-      flex-shrink: 0;
+  flex-shrink: 0;
   overflow: hidden;
   border-radius: 30px 0 0 30px;
   border-left: 3px solid #fdffa5;
@@ -130,16 +130,16 @@ body {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   width: 100%;
   height: 100%;
   background-image: url(../img/catwall.jpg);
   background-repeat: no-repeat;
-  background-position: 22% 0;
+  background-position: 28% 0;
   background-size: cover;
 }
 
@@ -153,8 +153,14 @@ body {
   padding-bottom: 1rem;
   padding-top: 3rem;
   background: black;
-  background: -webkit-gradient(linear, left bottom, left top, color-stop(40%, #1b1b1b), to(rgba(255, 255, 255, 0)));
-  background: linear-gradient(0deg, #1b1b1b 40%, rgba(255, 255, 255, 0) 100%);
+  background: -webkit-gradient(
+    linear,
+    left bottom,
+    left top,
+    color-stop(30%, #1b1b1b),
+    to(rgba(255, 255, 255, 0))
+  );
+  background: linear-gradient(0deg, #1b1b1b 30%, rgba(255, 255, 255, 0) 100%);
 }
 
 .description__text__accent {
@@ -163,8 +169,8 @@ body {
 
 .control {
   -webkit-box-flex: 1;
-      -ms-flex: 1 1 0px;
-          flex: 1 1 0;
+  -ms-flex: 1 1 0px;
+  flex: 1 1 0;
   padding: 1rem 1.2rem;
   background-color: rgba(0, 0, 0, 0.2);
   border: 3px solid #fdffa5;
@@ -192,7 +198,7 @@ body {
 
 .control__day-select__item {
   padding: 0.3rem 0.5rem;
-  font-family: "Russo One", sans-serif;
+  font-family: 'Russo One', sans-serif;
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
@@ -221,16 +227,16 @@ body {
   margin-top: 1.5rem;
 }
 
-.control__seat-select .control__header {
-  text-align: center;
-  padding: 0.3rem 0;
-  border-bottom: 1px solid #efefef;
-}
-
 .control__boxzone {
   padding-bottom: 1rem;
   border: 1px solid #efefef;
   border-radius: 20px;
+}
+
+.control__boxzone .control__header {
+  text-align: center;
+  padding: 0.3rem 0;
+  border-bottom: 1px solid #efefef;
 }
 
 .control__wall {
@@ -247,21 +253,122 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 
-.control__zone-label {
+.control__price-label {
   margin-top: 1rem;
   text-align: center;
   font-size: 0.7rem;
   color: #fddeaf;
 }
 
+.control__prices {
+  margin: 1rem auto 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.control__prices__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.control__prices__item p {
+  font-size: 0.7rem;
+  margin-right: 0.5rem;
+}
+
+.control__prices__item img {
+  width: 18px;
+  height: auto;
+}
+
+.control__order {
+  margin-top: 1rem;
+  text-align: left;
+}
+
+.control__order .control__header {
+  text-align: center;
+}
+
+.control__order__boxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.control__order__boxes__label {
+  margin-top: 0.5rem;
+  color: #fddeaf;
+}
+
+.control__order__boxes__set {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  justify-content: flex-start;
+}
+
+.control__order__boxes__item {
+  margin-left: 0.5rem;
+  margin-top: 0.5rem;
+  padding: 0.3rem;
+  min-width: 30px;
+  font-size: 0.7rem;
+  text-align: center;
+  background-color: #fddeaf;
+  color: #454545;
+  border: 2px solid #cb8c2e;
+}
+
+.control__order__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-top: 0.5rem;
+}
+
+.control__order__price p {
+  color: #fddeaf;
+}
+
+.control__order__price span {
+  color: #8fff68;
+  font-size: 1.5rem;
+}
+
+.control__order__price img {
+  width: 25px;
+  margin-left: 0.5rem;
+}
+
 .control__confirm-btn {
   margin-top: 1rem;
   padding: 0.5rem;
-  font-family: "Russo One", sans-serif;
+  font-family: 'Russo One', sans-serif;
   font-size: 1.2rem;
   text-transform: uppercase;
   border-radius: 7px;
@@ -285,11 +392,11 @@ body {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   width: 30px;
   height: 50px;
   margin-left: 0.3rem;
@@ -347,7 +454,7 @@ body {
   font-size: 0.6rem;
   color: #454545;
   text-align: center;
-  font-family: "Russo One", sans-serif;
+  font-family: 'Russo One', sans-serif;
   text-transform: uppercase;
   -webkit-transition: opacity 0.6s, color 0.3s;
   transition: opacity 0.6s, color 0.3s;
@@ -380,8 +487,8 @@ body {
   .main {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
     height: 100%;
   }
   .description {
