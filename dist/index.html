@@ -266,28 +266,52 @@
                 </label>
               </div>
             </div>
-            <p class="control__zone-label">Cardboar box zone</p>
+            <p class="control__price-label">Cardboar box zone prices</p>
+            <div class="control__prices">
+              <div class="control__prices__item">
+                <p>1 row:</p>
+                <img src="./img/fish.svg" alt="fish logo" />
+                <img src="./img/fish.svg" alt="fish logo" />
+                <img src="./img/fish.svg" alt="fish logo" />
+              </div>
+              <div class="control__prices__item">
+                <p>2 row:</p>
+                <img src="./img/fish.svg" alt="fish logo" />
+                <img src="./img/fish.svg" alt="fish logo" />
+              </div>
+              <div class="control__prices__item">
+                <p>3 row:</p>
+                <img src="./img/fish.svg" alt="fish logo" />
+              </div>
+            </div>
           </div>
-          <input class="control__confirm-btn" type="submit" value="Confirm" />
+          <div class="control__order">
+            <h2 class="control__header">Your order</h2>
+            <div class="control__order__boxes">
+              <p class="control__order__boxes__label">Boxes:</p>
+              <div class="control__order__boxes__set">
+                <p class="control__order__boxes__item">1</p>
+                <p class="control__order__boxes__item">14</p>
+                <p class="control__order__boxes__item">14</p>
+                <p class="control__order__boxes__item">14</p>
+                <p class="control__order__boxes__item">14</p>
+                <p class="control__order__boxes__item">14</p>
+                <p class="control__order__boxes__item">14</p>
+                <p class="control__order__boxes__item">14</p>
+                <p class="control__order__boxes__item">14</p>
+                <p class="control__order__boxes__item">14</p>
+                <p class="control__order__boxes__item">14</p>
+              </div>
+            </div>
+            <div class="control__order__price">
+              <p>Total price: <span>12</span></p>
+              <img src="./img/fish.svg" alt="fish logo" />
+            </div>
+          </div>
+          <input class="control__confirm-btn" type="button" value="Confirm" />
         </form>
       </section>
     </main>
-
-    <!-- Just for fun -->
-    <script>
-      const tryBtn = document.querySelector('.try-btn');
-      const overlay = document.querySelector('.overlay');
-      const main = document.querySelector('.main');
-
-      tryBtn.addEventListener('click', function () {
-        if (document.fullscreenElement) {
-          document.exitFullscreen();
-          [overlay, main].forEach((item) => item.classList.remove('hidden'));
-        } else {
-          document.documentElement.requestFullscreen();
-          [overlay, main].forEach((item) => item.classList.add('hidden'));
-        }
-      });
-    </script>
+    <script src="./js/main.js"></script>
   </body>
 </html>

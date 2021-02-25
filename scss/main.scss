@@ -95,7 +95,7 @@ body {
     height: 100%;
     background-image: url(../img/catwall.jpg);
     background-repeat: no-repeat;
-    background-position: 22% 0;
+    background-position: 28% 0;
     background-size: cover;
   }
 
@@ -111,7 +111,7 @@ body {
     background: rgb(0, 0, 0);
     background: linear-gradient(
       0deg,
-      rgb(27, 27, 27) 40%,
+      rgb(27, 27, 27) 30%,
       rgba(255, 255, 255, 0) 100%
     );
     &__accent {
@@ -126,6 +126,7 @@ body {
   background-color: rgba(0, 0, 0, 0.2);
   border: 3px solid $yellow;
   border-radius: 0 30px 30px 0;
+
   &__header {
     color: $yellow;
   }
@@ -171,18 +172,18 @@ body {
   &__seat-select {
     text-align: center;
     margin-top: 1.5rem;
-
-    & .control__header {
-      text-align: center;
-      padding: 0.3rem 0;
-      border-bottom: 1px solid $grey;
-    }
   }
 
   &__boxzone {
     padding-bottom: 1rem;
     border: 1px solid $grey;
     border-radius: 20px;
+
+    & .control__header {
+      text-align: center;
+      padding: 0.3rem 0;
+      border-bottom: 1px solid $grey;
+    }
   }
 
   &__wall {
@@ -199,11 +200,87 @@ body {
     justify-content: center;
   }
 
-  &__zone-label {
+  &__price-label {
     margin-top: 1rem;
     text-align: center;
     font-size: 0.7rem;
     color: $orange;
+  }
+
+  &__prices {
+    margin: 1rem auto 0;
+    display: flex;
+    justify-content: space-evenly;
+
+    flex-wrap: wrap;
+
+    &__item {
+      display: flex;
+      align-items: center;
+      p {
+        font-size: 0.7rem;
+        margin-right: 0.5rem;
+      }
+      img {
+        width: 18px;
+        height: auto;
+      }
+    }
+  }
+
+  &__order {
+    margin-top: 1rem;
+    text-align: left;
+
+    & .control__header {
+      text-align: center;
+    }
+
+    &__boxes {
+      display: flex;
+      align-items: center;
+
+      &__label {
+        margin-top: 0.5rem;
+        color: $orange;
+      }
+
+      &__set {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+      }
+
+      &__item {
+        margin-left: 0.5rem;
+        margin-top: 0.5rem;
+        padding: 0.3rem;
+        min-width: 30px;
+        font-size: 0.7rem;
+        text-align: center;
+        background-color: $orange;
+        color: $darkgrey;
+        border: 2px solid $brown;
+      }
+    }
+
+    &__price {
+      display: flex;
+      align-items: center;
+      margin-top: 0.5rem;
+
+      p {
+        color: $orange;
+      }
+      span {
+        color: $green;
+        font-size: 1.5rem;
+      }
+      img {
+        width: 25px;
+        margin-left: 0.5rem;
+      }
+    }
   }
 
   &__confirm-btn {
