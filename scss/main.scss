@@ -35,6 +35,15 @@ body {
   }
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
 .overlay {
   position: absolute;
   width: 100%;
@@ -42,7 +51,7 @@ body {
   background-color: rgba(0, 0, 0, 0.7);
   z-index: -1;
   transition: opacity 0.5s;
-  &.hidden {
+  &.hidden-opacity {
     opacity: 0;
   }
 }
@@ -74,7 +83,7 @@ body {
   min-height: 721px;
   width: 100%;
   transition: opacity 0.5s;
-  &.hidden {
+  &.hidden-opacity {
     opacity: 0;
   }
 }
@@ -324,15 +333,6 @@ body {
   cursor: pointer;
 
   &__checkbox {
-    &.visually-hidden {
-      position: absolute;
-      width: 1px;
-      height: 1px;
-      margin: -1px;
-      overflow: hidden;
-      clip: rect(0 0 0 0);
-    }
-
     &:checked ~ .box__cat {
       opacity: 1;
     }
