@@ -54,10 +54,18 @@ const boxSelectionHandler = ({ target }) => {
 const tryButtonHandler = () => {
   if (document.fullscreenElement) {
     document.exitFullscreen();
-    [overlay, main].forEach((item) => item.classList.remove('hidden'));
+    [overlay, main].forEach((item) => {
+      item.classList.remove('hidden-opacity', 'visually-hidden');
+    });
   } else {
     document.documentElement.requestFullscreen();
-    [overlay, main].forEach((item) => item.classList.add('hidden'));
+    [overlay, main].forEach((item) => item.classList.add('hidden-opacity'));
+  }
+};
+
+const removeFromScreen = () => {
+  if (document.fullscreenElement) {
+    [overlay, main].forEach((item) => item.classList.add('visually-hidden'));
   }
 };
 
@@ -65,6 +73,9 @@ const init = () => {
   printPrices();
   tryBtn.addEventListener('click', tryButtonHandler);
   form.addEventListener('click', boxSelectionHandler);
+  [overlay, main].forEach((item) => {
+    item.addEventListener('transitionend', removeFromScreen);
+  });
 };
 
 init();

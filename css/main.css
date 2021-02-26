@@ -63,6 +63,15 @@ body {
   }
 }
 
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+}
+
 .overlay {
   position: absolute;
   width: 100%;
@@ -73,7 +82,7 @@ body {
   transition: opacity 0.5s;
 }
 
-.overlay.hidden {
+.overlay.hidden-opacity {
   opacity: 0;
 }
 
@@ -110,7 +119,7 @@ body {
   transition: opacity 0.5s;
 }
 
-.main.hidden {
+.main.hidden-opacity {
   opacity: 0;
 }
 
@@ -412,15 +421,6 @@ body {
   background-color: #fddeaf;
   border: 2px solid #cb8c2e;
   cursor: pointer;
-}
-
-.box__checkbox.visually-hidden {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
 }
 
 .box__checkbox:checked ~ .box__cat {
