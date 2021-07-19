@@ -1,5 +1,5 @@
 {
-  "name": "frontend-2021-classroom",
+  "name": "wallwatchers",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -10,15 +10,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kottans/frontend-2021-classroom.git"
+    "url": "git+https://github.com/usides/wall-watchers.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kottans/frontend-2021-classroom/issues"
-  },
-  "homepage": "https://github.com/kottans/frontend-2021-classroom#readme",
   "dependencies": {},
   "devDependencies": {
     "babel-eslint": "^10.1.0",

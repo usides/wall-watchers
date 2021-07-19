@@ -19,3 +19,4 @@ Thumbs.db
 ._*
 tmp/
 .eslintcache
+/design

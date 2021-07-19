@@ -7,6 +7,7 @@ const PRICES = {
 const tryBtn = document.querySelector('.try-btn');
 const overlay = document.querySelector('.overlay');
 const main = document.querySelector('.main');
+const footer = document.querySelector('footer');
 const form = document.getElementById('control-seat-form');
 const orderedBoxes = document.getElementById('ordered-boxes');
 const totalPrice = document.getElementById('total-price');
@@ -54,18 +55,22 @@ const boxSelectionHandler = ({ target }) => {
 const tryButtonHandler = () => {
   if (document.fullscreenElement) {
     document.exitFullscreen();
-    [overlay, main].forEach((item) => {
+    [overlay, main, footer].forEach((item) => {
       item.classList.remove('hidden-opacity', 'visually-hidden');
     });
   } else {
     document.documentElement.requestFullscreen();
-    [overlay, main].forEach((item) => item.classList.add('hidden-opacity'));
+    [overlay, main, footer].forEach((item) => {
+      item.classList.add('hidden-opacity');
+    });
   }
 };
 
 const removeFromScreen = () => {
   if (document.fullscreenElement) {
-    [overlay, main].forEach((item) => item.classList.add('visually-hidden'));
+    [overlay, main, footer].forEach((item) => {
+      item.classList.add('visually-hidden');
+    });
   }
 };
 

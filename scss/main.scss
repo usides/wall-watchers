@@ -386,6 +386,20 @@ body {
   }
 }
 
+footer {
+  margin-top: 1rem;
+  text-align: center;
+  &.hidden-opacity {
+    opacity: 0;
+  }
+  p {
+    font-size: 0.8rem;
+    a {
+      font-size: inherit;
+    }
+  }
+}
+
 // ----------------- HOWERS
 @media (hover: hover) and (pointer: fine) {
   .control__day-select__item:hover {
