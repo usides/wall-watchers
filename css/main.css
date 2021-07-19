@@ -474,6 +474,23 @@ body {
   user-select: none;
 }
 
+footer {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+footer.hidden-opacity {
+  opacity: 0;
+}
+
+footer p {
+  font-size: 0.8rem;
+}
+
+footer p a {
+  font-size: inherit;
+}
+
 @media (hover: hover) and (pointer: fine) {
   .control__day-select__item:hover {
     color: #000;
@@ -523,6 +540,9 @@ body {
     position: static;
     -webkit-transform: translate(0%);
     transform: translate(0%);
+  }
+  footer {
+    display: none;
   }
 }
 
